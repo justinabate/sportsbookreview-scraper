@@ -39,7 +39,9 @@ if __name__ == "__main__":
 
     if args.format.lower() == "csv":
         data.to_csv(f"data/{args.filename}.csv", index=False)
+        print(f'saved dataframe to ./data/{args.filename}.csv')
     elif args.format.lower() == "json":
         data.to_json(f"data/{args.filename}.json", orient="records")
+        print(f'saved dataframe to ./data/{args.filename}.json')
     else:
         raise ValueError("Invalid output format. Must be csv or json.")
